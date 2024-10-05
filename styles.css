@@ -1,0 +1,111 @@
+body {
+  text-align: center;
+  overflow: hidden;
+  background-color: rgb(225, 20, 225);
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #A0522D, #8B4513); /* Brownish background */
+  overflow: hidden;
+  position: relative;
+  font-family: 'Press Start 2P', cursive; 
+}
+
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: rise 10s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+/* Larger bubbles */
+.bubble:nth-child(2n) {
+  width: 80px;
+  height: 80px;
+  animation-duration: 15s;
+}
+
+/* Smaller bubbles */
+.bubble:nth-child(3n) {
+  width: 20px;
+  height: 20px;
+  animation-duration: 8s;
+}
+
+/* Random positions for the bubbles */
+@keyframes rise {
+  0% {
+      bottom: -150px;
+      transform: translateX(0);
+      opacity: 0.6;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      bottom: 100vh;
+      transform: translateX(100px);
+      opacity: 0;
+  }
+}
+
+/* Generating random horizontal positions */
+.bubble:nth-child(1) { left: 10%; }
+.bubble:nth-child(2) { left: 30%; }
+.bubble:nth-child(3) { left: 50%; }
+.bubble:nth-child(4) { left: 70%; }
+.bubble:nth-child(5) { left: 90%; }
+
+
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
